@@ -36,7 +36,7 @@ To test that the fanning out works, launch two instances of the Consumer service
 
 <ol>
     <li><b>server.port</b></li>
-    <li><b>spring.cloud.stream.bindings.jg-fanout-exchange.group</b></li>
+    <li><b>spring.cloud.stream.bindings.{exchange-name}.group</b></li>
 </ol>
 
 Then, publish a message from the producer, and the message should be received by both consumers.
