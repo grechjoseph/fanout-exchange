@@ -1,0 +1,22 @@
+server:
+  port: 2222
+
+spring:
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+  cloud:
+    stream:
+      bindings:
+        jg-fanout-exchange:
+          destination: jgFanoutExchange
+          group: jgFanoutExchangeGroup1
+      rabbit:
+        bindings:
+          jg-fanout-exchange:
+            consumer:
+              exchangeType: fanout
+      default:
+        contentType: application/json
